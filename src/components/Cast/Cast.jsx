@@ -11,7 +11,6 @@ export const Cast = () => {
     try {
       const data = async () => {
         const response = await searchFilmCredids(location.state.from);
-        console.log(response);
         setCast([...response.cast]);
       };
       data();
@@ -28,8 +27,8 @@ export const Cast = () => {
                 : defaultImage
             }
             alt={elem.title || elem.name || elem.original_title}
-            width='220'
-            height='330'
+            width="220"
+            height="330"
           />
           <Paragraf>{elem.name || elem.original_name}</Paragraf>
         </Item>

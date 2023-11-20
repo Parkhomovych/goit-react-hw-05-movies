@@ -17,4 +17,3 @@ export const NotFoundPage = () => {
     </Box>
   );
 };
-// navigate(-1, { replace: true }); це еквівалентно натисканню кнопки «Назад»

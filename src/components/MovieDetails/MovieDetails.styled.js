@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
+import { Button } from 'components/Movies/Movies.styled';
 export const BoxContent = styled.div`
+  position: relative;
   display: flex;
   column-gap: 16px;
 `;
@@ -23,4 +24,8 @@ export const MyLink = styled(NavLink)`
   &.active {
     color: orange;
   }
+`;
+export const ReturnButton = styled(Button)`
+  position: absolute;
+  right: 0;
 `;

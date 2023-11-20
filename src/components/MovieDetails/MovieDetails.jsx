@@ -3,12 +3,14 @@ import { NotFoundPage } from 'components/NotFoundPage/NotFoundPage';
 import { useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import defaultImage from '../images/imageNotFound1.jpeg';
+import { useNavigate } from 'react-router-dom';
 import {
   BoxContent,
   BoxInfo,
   Image,
   List,
   MyLink,
+  ReturnButton,
 } from './MovieDetails.styled';
 import { Loader } from 'components/Loader/Loader';
 
@@ -36,6 +38,11 @@ export const MovieDetails = () => {
       setNotFound(false);
     };
   }, [movieId]);
+  const navigate = useNavigate();
+
+  const turnBack = () => {
+    navigate(-1, { replace: true }); //це еквівалентно натисканню кнопки «Назад»
+  };
   return (
     <>
       {loader ? (
@@ -45,6 +52,7 @@ export const MovieDetails = () => {
       ) : (
         <>
           <BoxContent>
+            <ReturnButton onClick={turnBack}>Turn Back</ReturnButton>
             <Image
               src={
                 details.poster_path
