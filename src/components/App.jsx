@@ -10,16 +10,18 @@ export const App = () => {
   return (
     <div style={{ margin: '0 auto', padding: '0 36px' }}>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/goit-react-hw-05-movies" element={<SharedLayout />}>
           <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movies/:movieId" element={<MovieDetails />}>
+        </Route>
+        <Route path="/movies" element={<SharedLayout />}>
+          <Route index element={<Movies />} />
+          <Route path=":movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-
-          <Route path="*" element={<NotFoundPage />} />
         </Route>
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

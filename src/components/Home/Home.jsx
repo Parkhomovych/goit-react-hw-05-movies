@@ -7,6 +7,7 @@ import { Loader } from 'components/Loader/Loader';
 export const Home = () => {
   const [films, setFilms] = useState([]);
   const [loader, setloader] = useState(false);
+
   useEffect(() => {
     try {
       setloader(true);
@@ -39,7 +40,7 @@ export const Home = () => {
               name,
             }) => (
               <li key={id}>
-                <LinkDetails to={`movies/${id}`}>
+                <LinkDetails to={`/movies/${id}`}>
                   <Image
                     src={
                       poster_path

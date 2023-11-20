@@ -9,7 +9,7 @@ export const NotFoundPage = () => {
       <h3 style={{ fontSize: '32px' }}>Not Found</h3>
       <Button
         onClick={() => {
-          navigate('/', { replace: true });
+          navigate('/goit-react-hw-05-movies', { replace: true });
         }}
       >
         go home
